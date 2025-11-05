@@ -19,5 +19,5 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           name: logs
-          path: download.txt
-      - run: cat download.txt
+          path: download
+      - run: cat download/logs.txt
