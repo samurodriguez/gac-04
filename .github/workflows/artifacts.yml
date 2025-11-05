@@ -18,5 +18,5 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           name: logs
-          # path: logs
+          path: download
       - run: ls -a
