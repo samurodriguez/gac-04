@@ -4,9 +4,10 @@ jobs:
   generate-artifact:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
       - uses: actions/upload-artifact@v4
         with:
           name: logs
-          path: ./logs.txt
+          path: logs.txt
           if-no-files-found: error
           retention-days: 7
