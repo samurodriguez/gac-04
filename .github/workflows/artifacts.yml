@@ -12,6 +12,7 @@ jobs:
           if-no-files-found: error
           retention-days: 7
   download-artifact:
+    needs: generate-artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
