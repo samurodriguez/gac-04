@@ -5,10 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node main.js
       - uses: actions/upload-artifact@v4
         with:
-          name: logs
-          path: logs.txt
+          name: random
+          path: random.txt
           if-no-files-found: error
           retention-days: 7
   download-artifact:
@@ -18,6 +22,6 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/download-artifact@v5
         with:
-          name: logs
-          path: download
-      - run: cat download/logs.txt
+          name: random
+          # path: download
+      - run: cat random.txt
